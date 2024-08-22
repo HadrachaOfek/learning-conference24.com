@@ -23,6 +23,7 @@
             height: 100vh; /* Full screen height */
             margin: 0; /* Remove any potential margin */
             padding: 0; /* Remove any potential padding */
+            position: relative; /* Allow absolute positioning of children */
         }
 
         img {
@@ -32,6 +33,24 @@
             display: block; /* Prevents any inline spacing */
             margin: 0; /* Remove default margin */
             padding: 0; /* Remove default padding */
+        }
+
+        .icon-container {
+            position: absolute;
+            bottom: 20px; /* Distance from the bottom of the image */
+            right: 20px; /* Distance from the right side of the image */
+            display: flex;
+            gap: 10px; /* Space between icons */
+        }
+
+        .icon-link {
+            display: block;
+        }
+
+        .icon {
+            width: 40px; /* Size of the icon */
+            height: auto; /* Maintain aspect ratio */
+            max-width: 100%; /* Ensure icon fits within the available space */
         }
     </style>
 </head>
@@ -57,6 +76,17 @@
         </div>
         <div class="image-container">
             <img id="image7" alt="Image 7">
+            <div class="icon-container">
+                <a href="https://waze.com/ul/hsvbftk7s5" class="icon-link">
+                    <img src="icon1.png" alt="Icon 1" class="icon">
+                </a>
+                <a href="https://maps.app.goo.gl/wKxReFgysEQhyN9P6?g_st=iw" class="icon-link">
+                    <img src="icon2.png" alt="Icon 2" class="icon">
+                </a>
+                <a href="https://support.google.com/maps/answer/6291838?hl=iw&co=GENIE.Platform%3DAndroid&sjid=5991357220991482740-EU" class="icon-link">
+                    <img src="icon3.png" alt="Icon 3" class="icon">
+                </a>
+            </div>
         </div>
         <div class="image-container">
             <img id="image8" alt="Image 8">
