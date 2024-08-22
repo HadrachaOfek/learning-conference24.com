@@ -23,17 +23,17 @@
             height: 100vh; /* Full screen height */
             margin: 0; /* Remove any potential margin */
             padding: 0; /* Remove any potential padding */
-            position: relative; /* Allow absolute positioning of icons */
+            position: relative; /* Allow absolute positioning */
         }
 
-        img {
+        img, iframe {
             width: 100%;
-            height: 100vh; /* Ensure image fills the full viewport height */
+            height: 100vh; /* Ensure image or iframe fills the full viewport height */
             object-fit: cover; /* Ensures the image covers the entire screen */
             display: block; /* Prevents any inline spacing */
             margin: 0; /* Remove default margin */
             padding: 0; /* Remove default padding */
-            
+        }
     </style>
 </head>
 <body>
@@ -56,24 +56,9 @@
         <div class="image-container">
             <img id="image6" alt="Image 6">
         </div>
-       <div class="image-container">
-    <iframe id="pdf7" src="" style="width: 100%; height: 100vh; border: none;"></iframe>
-
-    <!-- First Icon with Image -->
-    <a href="https://waze.com/ul/hsvbftk7s5" class="icon-link icon-link1 hide-on-desktop">
-        <img src="icon1.png" alt="Icon 1" style="width: 40px; height: 40px;">
-    </a>
-
-    <!-- Second Icon with Image -->
-    <a href="https://maps.app.goo.gl/wKxReFgysEQhyN9P6?g_st=iw" class="icon-link icon-link2 hide-on-desktop">
-        <img src="icon2.png" alt="Icon 2" style="width: 40px; height: 40px;">
-    </a>
-
-    <!-- Third Icon with Image -->
-    <a href="https://support.google.com/maps/answer/6291838?hl=iw&co=GENIE.Platform%3DAndroid&sjid=5991357220991482740-EU" class="icon-link icon-link3 hide-on-desktop">
-        <img src="icon3.png" alt="Icon 3" style="width: 40px; height: 40px;">
-    </a>
-       </div>
+        <div class="image-container">
+            <iframe id="pdf7" src="" style="border: none;"></iframe>
+        </div>
         <div class="image-container">
             <img id="image8" alt="Image 8">
         </div>
@@ -82,6 +67,7 @@
     <script>
         // Check if the user is on a mobile device
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
         if (isMobile) {
             // Mobile images
             document.getElementById('image1').src = "mobile1.png";
@@ -93,22 +79,20 @@
             document.getElementById('pdf7').src = "mobile7.pdf";
             document.getElementById('image8').src = "mobile8.png";
 
-    // Show icons on mobile for image 7
-    var icons = document.querySelectorAll('.icon-link');
-    icons.forEach(function(icon) {
-        icon.classList.remove('hide-on-desktop');
-    });
-} else {
-    // Desktop images
-    document.getElementById('image1').src = "1.png";
-    document.getElementById('image2').src = "2.png";
-    document.getElementById('image3').src = "3.png";
-    document.getElementById('image4').src = "4.png";
-    document.getElementById('image5').src = "5.png";
-    document.getElementById('image6').src = "6.png";
-    document.getElementById('pdf7').src = "7.pdf"; // אם יש לך PDF למחשב, אחרת ניתן להשתמש בתמונה
-    document.getElementById('image8').src = "8.png";
-}
+            // Adjust iframe size
+            var iframe = document.getElementById('pdf7');
+            iframe.style.height = window.innerHeight + 'px'; // Adjust height to viewport height
+        } else {
+            // Desktop images
+            document.getElementById('image1').src = "1.png";
+            document.getElementById('image2').src = "2.png";
+            document.getElementById('image3').src = "3.png";
+            document.getElementById('image4').src = "4.png";
+            document.getElementById('image5').src = "5.png";
+            document.getElementById('image6').src = "6.png";
+            document.getElementById('pdf7').src = "7.pdf"; // אם יש לך PDF למחשב, אחרת ניתן להשתמש בתמונה
+            document.getElementById('image8').src = "8.png";
+        }
     </script>
 </body>
 </html>
