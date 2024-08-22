@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IAF Learning Conference 2024</title>
+    <title>Iaf learning conference 2024</title>
     <style>
         body, html {
             margin: 0;
@@ -23,12 +23,11 @@
             height: 100vh; /* Full screen height */
             margin: 0; /* Remove any potential margin */
             padding: 0; /* Remove any potential padding */
-            position: relative; /* Allow absolute positioning */
         }
 
-        img, iframe {
+        img {
             width: 100%;
-            height: 100vh; /* Ensure image or iframe fills the full viewport height */
+            height: 100vh; /* Ensure image fills the full viewport height */
             object-fit: cover; /* Ensures the image covers the entire screen */
             display: block; /* Prevents any inline spacing */
             margin: 0; /* Remove default margin */
@@ -57,7 +56,7 @@
             <img id="image6" alt="Image 6">
         </div>
         <div class="image-container">
-            <iframe id="pdf7" src="" allowfullscreen></iframe>
+            <img id="image7" alt="Image 7">
         </div>
         <div class="image-container">
             <img id="image8" alt="Image 8">
@@ -76,12 +75,8 @@
             document.getElementById('image4').src = "mobile4.png";
             document.getElementById('image5').src = "mobile5.png";
             document.getElementById('image6').src = "mobile6.png";
-            document.getElementById('pdf7').src = "mobile7.pdf";
+            document.getElementById('image7').src = "mobile7.png";
             document.getElementById('image8').src = "mobile8.png";
-
-            // Adjust iframe size
-            var iframe = document.getElementById('pdf7');
-            iframe.style.height = window.innerHeight + 'px'; // Adjust height to viewport height
         } else {
             // Desktop images
             document.getElementById('image1').src = "1.png";
@@ -90,7 +85,7 @@
             document.getElementById('image4').src = "4.png";
             document.getElementById('image5').src = "5.png";
             document.getElementById('image6').src = "6.png";
-            document.getElementById('png7').src = "7.png";
+            document.getElementById('image7').src = "7.png";
             document.getElementById('image8').src = "8.png";
         }
     </script>
