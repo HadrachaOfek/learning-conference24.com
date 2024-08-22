@@ -26,10 +26,10 @@
             position: relative; /* Allow absolute positioning */
         }
 
-        img, iframe {
+        iframe {
             width: 100%;
-            height: 100vh; /* Ensure image or iframe fills the full viewport height */
-            object-fit: cover; /* Ensures the image covers the entire screen */
+            height: 100vh; /* Ensure iframe fills the full viewport height */
+            border: none; /* Remove iframe border */
             display: block; /* Prevents any inline spacing */
             margin: 0; /* Remove default margin */
             padding: 0; /* Remove default padding */
@@ -39,28 +39,7 @@
 <body>
     <div class="container">
         <div class="image-container">
-            <img id="image1" alt="Image 1">
-        </div>
-        <div class="image-container">
-            <img id="image2" alt="Image 2">
-        </div>
-        <div class="image-container">
-            <img id="image3" alt="Image 3">
-        </div>
-        <div class="image-container">
-            <img id="image4" alt="Image 4">
-        </div>
-        <div class="image-container">
-            <img id="image5" alt="Image 5">
-        </div>
-        <div class="image-container">
-            <img id="image6" alt="Image 6">
-        </div>
-        <div class="image-container">
-            <iframe id="pdf7" src="" style="border: none;"></iframe>
-        </div>
-        <div class="image-container">
-            <img id="image8" alt="Image 8">
+            <iframe id="pdf7" src="" allowfullscreen></iframe>
         </div>
     </div>
 
@@ -69,29 +48,14 @@
         var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
 
         if (isMobile) {
-            // Mobile images
-            document.getElementById('image1').src = "mobile1.png";
-            document.getElementById('image2').src = "mobile2.png";
-            document.getElementById('image3').src = "mobile3.png";
-            document.getElementById('image4').src = "mobile4.png";
-            document.getElementById('image5').src = "mobile5.png";
-            document.getElementById('image6').src = "mobile6.png";
+            // Load the mobile PDF
             document.getElementById('pdf7').src = "mobile7.pdf";
-            document.getElementById('image8').src = "mobile8.png";
-
             // Adjust iframe size
             var iframe = document.getElementById('pdf7');
             iframe.style.height = window.innerHeight + 'px'; // Adjust height to viewport height
         } else {
-            // Desktop images
-            document.getElementById('image1').src = "1.png";
-            document.getElementById('image2').src = "2.png";
-            document.getElementById('image3').src = "3.png";
-            document.getElementById('image4').src = "4.png";
-            document.getElementById('image5').src = "5.png";
-            document.getElementById('image6').src = "6.png";
-            document.getElementById('pdf7').src = "7.pdf"; // אם יש לך PDF למחשב, אחרת ניתן להשתמש בתמונה
-            document.getElementById('image8').src = "8.png";
+            // Load the desktop PDF
+            document.getElementById('pdf7').src = "7.pdf"; 
         }
     </script>
 </body>
